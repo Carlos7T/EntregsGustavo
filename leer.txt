@@ -1,0 +1,33 @@
+PUERTO DE LA APLICACIÓN 9400
+PUERTO PARA LAS APIS	9500
+
+
+
+
+EntregasGustavo/                  => PROYECTO PRINCIPAL
+  |_app.py                        => py inicial de todo servicio web
+  |_inicio/                       => carpeta del subproyecto o modulo del proyecto principal
+      |_ __init__.py	            => Archivo necesario paindicar que la carpeta inicio  es un modulo de app.py
+      |_ ini_route.py	            => py de la ruta para este modulo
+      |_ templates/               => carpea de los templates para este modulo
+      	|_ index.html             => template inicial .html 
+  |_micro/                        => carpeta de los micro servicios para esta aplicación
+      |_ api.py                   => py inicial para los servicios REST
+      |_ cnx/                     => carpeta del modulo para conexion a la BD
+        |_ __init__.py            
+        |_ db_sepo.py             => py para conectarse a la bd sepomex
+  |_static/                       => carpeta de archivos staticos CSS JS IMG
+      |_ inicio/                  => esta carpeta sebede llamar igual que el modulo que va utilizar los archivos estaticos
+        |_css/                    
+          |_ inicio.css  
+        |_img/
+          |_ .jpg o .png
+        |_js/
+          |_ inicio.js  
+      |_ lib/                     => esta carpeta contiene las librerias que se utilizan en conjunto de archivios estatticos en todos los modulos
+        |_css/ 
+          |_boostrap/  
+        |_js/
+          |_boostrap/
+          |_datatable/
+          |_jquery/

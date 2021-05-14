@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="{{ url_for('static', filename='/lib/js/jquery/jquery-3.5.1.js') }}"></script>
+    <script src="{{ url_for('static', filename='/lib/js/bootstrap/bootstrap.js') }}"></script>
+    <link   href="{{ url_for('static', filename='/lib/css/bootstrap/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+    <title>EntregasGustavo</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link href="{{ url_for('static', filename='/inicio/css/inicio.css') }}?v={{version}}"  rel="stylesheet" type="text/css" />
+    <script src="{{ url_for('static', filename='/inicio/js/inicio.js') }}?v={{version}}"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg colorPrimario">
+      <a class="navbar-brand text-white" href="#">EntregasGustavo.com 
+        <img src="{{ url_for('static', filename='/inicio/img/logoGustavo.png')}}" style="width: 46px" />
+      </a>
+    </nav>
+
+    <div id="map"></div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      data-backdrop="static"
+      data-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">
+              ENTREGAS EN TODO MEXICO
+            </h5>
+          
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          
+
+
+          <div class="modal-body">
+            <form id="formCpMapa" >
+              <div class="form-row">
+                <div class="col-sm-9">
+                  <input
+                    type="text"
+                    class="form-control mb-2 form-control-lg shadow-sm p-3 bg-white rounded  fs-6"
+                    id="cpPrin"
+                    name="cpPrin"
+                    placeholder=".. codigo postal, colonia , ciudad"
+                  />
+                </div>
+                <div class="col-auto" style="left: -14px">
+                  <button type="button" onclick="fn_cp()"
+                    class="btn mb-2 btn-lg shadow-sm colorPrimario text-white">
+                    Buscar
+                  </button>
+                </div>
+              </div>
+            
+            </form>
+            <br />
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="container">
+      <div class="row">
+        <h3 class="text-center">Resultados de informacion</h3>
+        <div class="col-lg-12">
+         <div >
+             <div class="table-responsive">
+               <table class="table" >
+             <tbody id="tabResultados">
+                 
+                
+             </tbody>
+            
+           </table>
+         </div>
+       
+     </div><!---->
+      
+        </div>
+    </div> 
+ </div>
+    </div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB8dpPl21YyPualbIfLl84IEBW6kiWd_w&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#exampleModal").modal("toggle");
+      });
+
+    </script>
+  </body>
+</html>
