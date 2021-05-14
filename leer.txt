@@ -4,15 +4,16 @@ PUERTO PARA LAS APIS	9500
 
 
 
+
 EntregasGustavo/                  => PROYECTO PRINCIPAL
-  |_app.py                        => py inicial de todo servicio web
+  |_app.py                        => py inicial de todo servicio web (ES NECESARIO CORRER ESTE ARCHIVO)
   |_inicio/                       => carpeta del subproyecto o modulo del proyecto principal
       |_ __init__.py	            => Archivo necesario paindicar que la carpeta inicio  es un modulo de app.py
       |_ ini_route.py	            => py de la ruta para este modulo
       |_ templates/               => carpea de los templates para este modulo
       	|_ index.html             => template inicial .html 
   |_micro/                        => carpeta de los micro servicios para esta aplicación
-      |_ api.py                   => py inicial para los servicios REST
+      |_ api.py                   => py inicial para los servicios REST (ES NECESARIO CORRER ESTE ARCHIVO)
       |_ cnx/                     => carpeta del modulo para conexion a la BD
         |_ __init__.py            
         |_ db_sepo.py             => py para conectarse a la bd sepomex
